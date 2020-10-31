@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './Components/Home';
+import About from './Components/About';
+import Contact from './Components/Tickets';
+import Faq from './Components/Faq';
+import Navigation from './Components/Navigation';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-social/bootstrap-social.css';
+import 'font-awesome/css/font-awesome.css';
+import Tickets from './Components/Tickets';
+import Footer from './Components/Footer';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+ 
+class App extends Component {
+  render() {
+    return (      
+       <BrowserRouter>
+        <div>
+          <Navigation />
+            <Switch>
+             <Route path="/" component={Home} exact/>
+             <Route path="/about" component={About}/>
+             <Route path="/tickets" component={Tickets} />
+             <Route path="/faq" component={Faq} />
+           </Switch>
+        </div> 
+      </BrowserRouter>
+    );
+  }
+}
 export default App;

@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Lobster", cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.jumbotron1 {
+  margin: 0;
+  background-image: url("jumboImage.jpg");
   color: white;
+  background-size: cover;
+  text-align: center;
+  height: 550px;
+  position: relative;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.content-holder {
+  position: absolute;
+  top: 50%!important;
+  left: 50%!important;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 100px;
+  font-family: 'Courgette', cursive;
+
+}
+
+.navbar-dark {
+  margin-bottom: 0;
+  background-color:rgb(241, 241, 64);
+}
+
+.navLink {
+  margin: 85px;
+  font-size: large;
+}
+
+h2, p {
+  text-align: center;
+  
+}
+
+.cardBtn {
+  position: absolute;
+  top: 50%!important;
+  left: 50%!important;
+  transform: translate(-50%, -50%);
+}
+
+
+.jumbotron2 {
+  margin: 0;
+  background-image: url("jumboImage2.jpg");
+  color: white;
+  background-size: cover;
+  text-align: center;
+  height: 750px;
+  position: relative;
+  
+}
+
+.jumboFooter{
+  margin: 0;
+  background-color: rgb(253, 174, 171)
+}
+
+.jumboAbout {
+  margin: 0;
+  background-color: rgb(238, 146, 70);
+  text-align: center;
+  font-size: large;
+}
+
+.divAbout {
+  padding-left: 80pt;
+  padding-right: 80pt;
+}
+
+.navItems {
+  position: relative;
 }
