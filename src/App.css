@@ -82,3 +82,14 @@ h2, p {
 .navItems {
   position: relative;
 }
+
+.TicketsTitle {
+  text-align: center;
+  font-size: x-large;
+  padding-top: 10pt;
+}
+
+.ticket-head{
+  text-align: center;
+  font-size: xx-large;
+}
