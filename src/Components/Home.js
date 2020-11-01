@@ -11,7 +11,7 @@ const home = () => {
                     <div className="row">
                         <div className="col content-holder">
                             <h1>Indulgent Fest</h1>
-                            <h3>Extravagent Food & Drink Festival</h3>
+                            <h3>Extravagent Food and Drink Festival</h3>
                         </div>
                     </div>
                 </div>
