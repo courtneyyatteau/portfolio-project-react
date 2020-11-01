@@ -17,7 +17,7 @@ const home = () => {
                 </div>
             </Jumbotron>
             <div>
-                <h2>Eat.Shop.Drink.Relax.</h2>
+                <h2>Eat.Drink.Shop.Relax.</h2>
                 <p>Grab your friends and come indulge in some of the best foods from around the country.</p>
             </div>
             <div className="row">
