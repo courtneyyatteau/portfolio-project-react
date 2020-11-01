@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Card, CardBody } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { render } from '@testing-library/react';
 
@@ -24,8 +24,13 @@ class Navigation extends Component {
         return (
             <React.Fragment>
                 <Navbar dark sticky="top" expand="xl" variant="light">
+                    
                     <div className="container">
-                        <NavbarBrand className="mr-auto navPic" href="/"><img src="/assets/images/logo.png" height="80" width="80" alt="Food Logo" /></NavbarBrand>
+                        <NavbarBrand >
+                            <Card>
+                                <CardBody className="navPic"></CardBody>
+                            </Card>
+                        </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar className="navItems">

@@ -93,3 +93,28 @@ h2, p {
   text-align: center;
   font-size: xx-large;
 }
+
+.cardImage {
+  background-image: url("Cookies.PNG");
+  height: 460px;
+  background-size: 645px;
+}
+
+.cardImage2 {
+  background-image: url("Drinks.jpg");
+  height: 460px;
+  background-size: 690px;
+}
+
+.cardImage3 {
+  background-image: url("Fries.PNG");
+  height: 460px;
+  background-size: 690px;
+}
+
+.navPic {
+  background-image: url("logo.png");
+  background-size: 70px;
+  height: 70px;
+  width: 70px;
+}

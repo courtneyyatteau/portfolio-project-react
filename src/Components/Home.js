@@ -1,8 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Jumbotron, Button } from 'reactstrap';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 import Footer from './Footer';
-
  
 const home = () => {
     return (
@@ -23,21 +22,21 @@ const home = () => {
             </div>
             <div className="row">
                 <Card className="col-md-4">
-                    <CardBody>
-                        <CardImg className="cardImage" src="/assets/images/Cookies.PNG" />
-                        <a href="/about"><Button className="cardBtn"><CardText>About</CardText></Button></a>
+                    <CardBody className>
+                        <CardImg className="cardImage"></CardImg>
+                        <Link to="/about"><Button className="cardBtn"><CardText>About</CardText></Button></Link>
                     </CardBody>
                 </Card>
                 <Card className="col-md-4">
                     <CardBody>
-                        <CardImg className="cardImage img-fluid" src="./assets/images/Fries.PNG"/>
-                        <a href="/tickets"><Button className="cardBtn"><CardText>Buy Tickets</CardText></Button></a>
+                        <CardImg className="cardImage2"></CardImg>
+                        <Link to="/tickets"><Button className="cardBtn"><CardText>Buy Tickets</CardText></Button></Link>
                     </CardBody>
                 </Card>
                 <Card className="col-md-4">
                     <CardBody>
-                        <CardImg className="cardImage" src="/assets/images/Drinks.jpg"/>
-                        <a href="/faq"><Button className="cardBtn"><CardText>FAQ</CardText></Button></a>
+                        <CardImg className="cardImage3"></CardImg>
+                        <Link to="/faq"><Button className="cardBtn"><CardText>FAQ</CardText></Button></Link>
                     </CardBody>
                 </Card>
             </div>
