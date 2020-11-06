@@ -1,17 +1,17 @@
 import React, { Component }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Card, CardBody } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink , Link} from 'react-router-dom';
 import { render } from '@testing-library/react';
 
 
 class Navigation extends Component {
     constructor(props) {
         super(props);
-
-        this.toggleNav = this.toggleNav.bind(this);
+        
         this.state = {
-          isNavOpen: false
+          isNavOpen: false,
         };
+        this.toggleNav = this.toggleNav.bind(this);
     }
 
     toggleNav() {
@@ -23,34 +23,38 @@ class Navigation extends Component {
     render() {
         return (
             <React.Fragment>
-                <Navbar dark sticky="top" expand="xl" variant="light">
-                    
-                    <div className="container">
-                        <NavbarBrand >
-                            <Card>
-                                <CardBody className="navPic"></CardBody>
-                            </Card>
-                        </NavbarBrand>
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar className="navItems">
-                                <NavItem>
-                                    <NavLink className="navLink" to="/">Home </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="navLink" to="/about">About</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="navLink" to="/tickets">Tickets</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className="navLink" to="/faq">FAQ</NavLink>
-                                </NavItem>
-                            </Nav>
-                        </Collapse>
-                    </div>
-                </Navbar>
-        </React.Fragment>
+                <Nav navbar className="navItems">
+                    <Navbar dark sticky="top" expand="lg" variant="light">
+                        <div className="container">
+                            <NavbarBrand className="navPic1" >
+                                <Card>
+                                    <CardBody className="navPic2"></CardBody>
+                                </Card>
+                            </NavbarBrand>
+                            <NavbarToggler onClick={this.toggleNav} />
+                            <Collapse isOpen={this.state.isNavOpen} navbar>
+                                    <NavItem>
+                                        <Link className="navLink" to="/">Home </Link>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link className="navLink" to="/about">About</Link>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link className="navLink" to="/tickets">Tickets</Link>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link className="navLink" to="/faq">FAQ</Link>
+                                        
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link className="navLink" ><i className="fa fa-shopping-cart"> Cart<span> (0)</span></i></Link>
+                                    </NavItem>
+                                
+                            </Collapse>
+                        </div>
+                    </Navbar>
+                </Nav>
+            </React.Fragment>
         );
     }
 }
