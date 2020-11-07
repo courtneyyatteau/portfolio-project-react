@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Main from './Components/Main'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
-
+import { Provider } from 'react-redux';
 import './App.css';
+import store from './Components/store'
 
 
  
-class App extends Component {
-  render() {
+function App(){
     return (      
-       <BrowserRouter>
-          <div>
-            <Main />
-          </div> 
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+            <div>
+              <Main />
+            </div> 
+        </BrowserRouter>
+      </Provider>
     );
-  }
 }
 export default App;

@@ -1,27 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { render } from 'react-dom';
 import { Jumbotron, UncontrolledCollapse, Card, CardImg, CardText, CardBody, CardTitle} from 'reactstrap';
 import Footer from './Footer';
+import { connect } from 'react-redux';
+import { addBasket } from '../Components/actions/addAction'
 
 
-class Tickets extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
-
-  render() {
+const Tickets = (props) => {
+    console.log(props);
     return (
       <React.Fragment>
-        <Jumbotron>
+        <Jumbotron className="TicketJumbo">
           <div>
             <Card>
               <CardTitle className="ticket-head">Ticket Options</CardTitle>
             </Card>
           </div>
-
           <br />
           <div className="row">
             <div className="col-md-6">
@@ -54,11 +48,22 @@ class Tickets extends Component {
             </Card>
             </div>
           </div>
+          <div className="TicketContainer">
+            <Card className="TicketCard">
+              <h3>General <br />Admission</h3>
+              <h3>$50</h3>
+              <a onClick = {props.addBasket} className="addToCart cart1" href="#">Add to Cart</a>
+            </Card>
+            <Card className="TicketCard">
+              <h3>VIP<br />Admission</h3>
+              <h3>$80</h3>
+              <a onClick = {props.addBasket} className="addToCart cart2" href="#">Add to Cart</a>
+            </Card>
+          </div>
         </Jumbotron>
         <Footer />
       </React.Fragment>
     );
-  }
 }
 
-export default Tickets;
+export default connect(null, { addBasket })(Tickets);

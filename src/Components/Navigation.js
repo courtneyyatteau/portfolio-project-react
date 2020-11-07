@@ -1,62 +1,56 @@
-import React, { Component }  from 'react';
+import React, { Component, useEffect }  from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Card, CardBody } from 'reactstrap';
 import { NavLink , Link} from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
+import { connect } from 'react-redux';
+import { getNumbers } from './actions/getAction'
 
 
-class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-          isNavOpen: false,
-        };
-        this.toggleNav = this.toggleNav.bind(this);
-    }
+function Navigation(props) {
+    
+    useEffect(() => {
+        getNumbers();
+    }, [])
 
-    toggleNav() {
-        this.setState({
-            isNavOpen: !this.state.isNavOpen
-        });
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <Nav navbar className="navItems">
-                    <Navbar dark sticky="top" expand="lg" variant="light">
-                        <div className="container">
-                            <NavbarBrand className="navPic1" >
-                                <Card>
-                                    <CardBody className="navPic2"></CardBody>
-                                </Card>
-                            </NavbarBrand>
-                            <NavbarToggler onClick={this.toggleNav} />
-                            <Collapse isOpen={this.state.isNavOpen} navbar>
-                                    <NavItem>
-                                        <Link className="navLink" to="/">Home </Link>
-                                    </NavItem>
-                                    <NavItem>
-                                        <Link className="navLink" to="/about">About</Link>
-                                    </NavItem>
-                                    <NavItem>
-                                        <Link className="navLink" to="/tickets">Tickets</Link>
-                                    </NavItem>
-                                    <NavItem>
-                                        <Link className="navLink" to="/faq">FAQ</Link>
-                                        
-                                    </NavItem>
-                                    <NavItem>
-                                        <Link className="navLink" ><i className="fa fa-shopping-cart"> Cart<span> (0)</span></i></Link>
-                                    </NavItem>
-                                
-                            </Collapse>
-                        </div>
-                    </Navbar>
-                </Nav>
-            </React.Fragment>
-        );
-    }
+    return (
+        <React.Fragment>
+            <Nav navbar className="navItems">
+                <Navbar dark sticky="top" expand="lg" variant="light">
+                    <div className="container">
+                        <NavbarBrand className="navPic1" >
+                            <Card>
+                                <CardBody className="navPic2"></CardBody>
+                            </Card>
+                        </NavbarBrand>
+                        <NavbarToggler />
+                        <Collapse navbar>
+                                <NavItem>
+                                    <Link className="navLink" to="/">Home </Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link className="navLink" to="/about">About</Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link className="navLink" to="/tickets">Tickets</Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link className="navLink" to="/faq">FAQ</Link>
+                                </NavItem>
+                                <NavItem>
+                                    <Link className="navLink" ><i className="fa fa-shopping-cart"> Cart <span>({props.basketProps.basketNumbers})</span></i></Link>
+                                </NavItem>
+                            
+                        </Collapse>
+                    </div>
+                </Navbar>
+            </Nav>
+        </React.Fragment>
+    );
 }
 
-export default Navigation;
+
+const mapStateToProps = state => ({
+    basketProps: state.basketState
+})
+
+export default connect(mapStateToProps, { getNumbers })(Navigation);
